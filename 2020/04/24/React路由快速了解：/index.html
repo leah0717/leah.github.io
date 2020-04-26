@@ -16,7 +16,7 @@
 <meta property="og:description" content="React路由快速了解：用框架的话自然离不开路由，不论是vue还是react使用路由都少不了要涉及到路由出口、配置路由、重定向、路由跳转以及优化所作的懒加载等等，加下来让我们快速做个入门了解(为方便联想也会简单写出vue中起同样作用的是何组件) 安装：1npm i &quot;react-router-dom&quot; --save  定义路由模式：HashRouter和BrowserRoute">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-24T14:56:48.959Z">
-<meta property="article:modified_time" content="2020-04-24T16:00:45.575Z">
+<meta property="article:modified_time" content="2020-04-26T14:27:54.498Z">
 <meta property="article:author" content="不靠谱的李壮壮">
 <meta property="article:tag" content="React Router">
 <meta name="twitter:card" content="summary">
@@ -30,7 +30,7 @@
   <style type="text/css">
   
     #container.show {
-      background: #fff;
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
   
@@ -187,8 +187,9 @@
 
 <h3 id="定义路由模式：HashRouter和BrowserRouter"><a href="#定义路由模式：HashRouter和BrowserRouter" class="headerlink" title="定义路由模式：HashRouter和BrowserRouter"></a>定义路由模式：HashRouter和BrowserRouter</h3><p>HashRouter对应的是Hash路由，BrowerRouter对应的是History路由</p>
 <p>使用：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在入口文件（index.js）中引入并使用</span></span><br><span class="line"><span class="keyword">import</span>&#123;HashRouter,Browser&#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;APP&gt;&lt;<span class="regexp">/APP&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>HashRouter&gt;</span><br><span class="line">,<span class="built_in">document</span>.getElementById(<span class="string">"root"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在入口文件（index.js）中引入并使用</span></span><br><span class="line"><span class="keyword">import</span>&#123;HashRouter,Browser&#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;APP&gt;&lt;<span class="regexp">/APP&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>HashRouter&gt;</span><br><span class="line">,<span class="built_in">document</span>.getElementById(<span class="string">"root"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <h3 id="路由出口：Switch组件"><a href="#路由出口：Switch组件" class="headerlink" title="路由出口：Switch组件"></a>路由出口：Switch组件</h3><p>vue中：router-view</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Switch,Route，Redirect&#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;div&gt;</span><br><span class="line">      	&lt;Switch&gt;</span><br><span class="line">          &lt;Route path=<span class="string">"/index"</span> component=&#123;index&#125;&gt;&lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Route path="/</span>login<span class="string">" component=&#123;login&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">          &lt;Redirect to="</span>/login<span class="string">"&gt;&lt;/Redirect&gt;</span></span><br><span class="line"><span class="string">        &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
